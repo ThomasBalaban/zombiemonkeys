@@ -36,23 +36,14 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit() {
     this.zmat = this.cookieService.get('zmat');
-
-    console.log('token: ', this.zmat);
-
-    if (this.zmat) {
-      console.log('logged in');
-    }
   }
 
   saveForm() {
-    console.log('created user: ', this.createUserForm.value);
     this.loginService.makeAccount(this.createUserForm.value).subscribe( (res: any) => {
-      console.log(res);
     }, error => console.log(error));
   }
 
   loginForm() {
-    console.log('login user: ', this.loginUserForm.value);
     this.loginService.loginUser(this.loginUserForm.value).subscribe( (res: TokenObj) => {
       console.log(res);
       this.cookieService.set('zmat', res.token);

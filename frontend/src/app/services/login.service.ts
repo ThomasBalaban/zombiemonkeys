@@ -8,6 +8,8 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root'
 })
 export class LoginService {
+  private currentUser;
+
   baseUrl = 'http://127.0.0.1:8000/';
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -41,8 +43,11 @@ export class LoginService {
   loginUser(authData, retries = 0): Observable<any> {
     const body = JSON.stringify(authData);
 
-    return this.http.post(this.baseUrl + 'auth/', body, {headers: this.headers}).pipe(
+    return this.http.post(this.baseUrl + 'login/', body, {headers: this.headers}).pipe(
       map( (res: any) => {
+        this.currentUser = res;
+        console.log('current user from logging in: ', this.currentUser);
+        localStorage.setItem('current user', JSON.stringify(this.currentUser));
         return res;
       }),
       retry(retries),
@@ -52,6 +57,10 @@ export class LoginService {
 
   public login(authData, retries?: number) {
     return this.loginUser(authData, retries);
+  }
+
+  getUserData() {
+    return JSON.parse(localStorage.getItem('current user'));
   }
 
   getAuth() { // I wont need this in the future its just a example to get the token and add it to the header
