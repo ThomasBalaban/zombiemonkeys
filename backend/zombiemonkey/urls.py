@@ -25,6 +25,7 @@ from .views import CustomObtainAuthToken
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('videos/', include('videos.urls')),
+    path('articles/', include('articles.urls')),
     path('users/', include('users.urls')),
     path('auth/', obtain_auth_token),
     url('login/', CustomObtainAuthToken.as_view())

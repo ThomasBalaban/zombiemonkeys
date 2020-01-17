@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'videos.apps.VideosConfig',
+    'articles.apps.ArticlesConfig',
     'users.apps.UsersConfig',
     'corsheaders',
 ]
