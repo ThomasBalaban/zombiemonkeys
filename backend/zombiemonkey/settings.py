@@ -37,10 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_summernote',
     'rest_framework',
     'rest_framework.authtoken',
     'videos.apps.VideosConfig',
     'articles.apps.ArticlesConfig',
+    'podcast.apps.PodcastConfig',
     'users.apps.UsersConfig',
     'corsheaders',
 ]
@@ -55,6 +57,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ROOT_URLCONF = 'zombiemonkey.urls'
 

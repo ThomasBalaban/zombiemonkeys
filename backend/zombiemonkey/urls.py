@@ -26,7 +26,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('videos/', include('videos.urls')),
     path('articles/', include('articles.urls')),
+    path('podcast/', include('podcast.urls')),
     path('users/', include('users.urls')),
     path('auth/', obtain_auth_token),
-    url('login/', CustomObtainAuthToken.as_view())
+    url('login/', CustomObtainAuthToken.as_view()),
+    path('summernote/', include('django_summernote.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

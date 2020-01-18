@@ -11,7 +11,7 @@ class Video(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1, on_delete=models.SET_DEFAULT)
     video_title = models.CharField(max_length=255)
     video_description = models.TextField(blank=True) #blank allows this to be empty
-    video = models.CharField(max_length=255)
+    video = models.FileField(upload_to='video/', null=True)
     video_thumbnail = models.ImageField(upload_to='video/video_thumbnails', blank=True)
     created_date = models.DateTimeField(default=timezone.now)
     #number = models.OneToOneField(VideoNumber, null=True, blank=True, on_delete=models.CASCADE) #CASCADE will also delete the objects that have references to it here
