@@ -1,6 +1,6 @@
-from .models import Video
+from .models import Video, Comment
 from rest_framework import viewsets
-from .serializers import VideoSerializer
+from .serializers import VideoSerializer, VideoCommentSerializer
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated, AllowAny
 

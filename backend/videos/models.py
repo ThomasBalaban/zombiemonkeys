@@ -25,6 +25,13 @@ class Video(models.Model):
     def __str__(self):
         return self.video_title
 
+class Comment(models.Model):
+    post = models.ForeignKey('videos.Video', on_delete=models.CASCADE, related_name='comments')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1, on_delete=models.SET_DEFAULT)
+    text = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+
+
 # class MovieCharacter(models.Model): #one to many
 #     name = models.CharField(max_length=30)
 #     movie = models.ForeignKey(Video, on_delete=models.CASCADE, related_name='character')
