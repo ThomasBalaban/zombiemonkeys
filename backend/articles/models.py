@@ -14,6 +14,13 @@ class Article(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     revised_date = models.DateTimeField(auto_now=True)
 
+    class Promo(models.IntegerChoices):
+        NONPROMO = 0
+        PROMO = 1
+        BIGPROMO = 2
+        HUGEPROMO = 3
+
+    promoted = models.IntegerField(choices=Promo.choices, default=0)
 
     def article_posterImg(self):
         return mark_safe('<img src="%s" style="width: auto; height: 80px;" />' % (self.article_poster.url))
@@ -23,3 +30,15 @@ class Article(models.Model):
 
     def __str__(self):
         return self.article_title
+
+class Comment(models.Model):
+    post = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='comments')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1, on_delete=models.SET_DEFAULT, related_name='podcast_user')
+    text = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+
+class Tag(models.Model):
+    post = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='tags')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1, on_delete=models.SET_DEFAULT, related_name='podcast_tag')
+    tag = models.CharField(max_length=50)
+    created_date = models.DateTimeField(default=timezone.now)
