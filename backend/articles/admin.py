@@ -4,11 +4,11 @@ from django_summernote.admin import SummernoteModelAdmin
 
 class Comments(admin.TabularInline):
     model = Comment
-    extra = 1
+    extra = 0
 
 class Tags(admin.TabularInline):
     model = Tag
-    extra = 1
+    extra = 0
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
