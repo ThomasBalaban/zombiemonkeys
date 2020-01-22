@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { LoginService } from 'src/app/services/login.service';
+import { UserService } from 'src/app/services/user.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 
@@ -29,7 +29,7 @@ export class LoginFormComponent implements OnInit {
   });
 
   constructor(
-    private loginService: LoginService,
+    private userService: UserService,
     private cookieService: CookieService,
     private router: Router,
   ) { }
@@ -39,12 +39,12 @@ export class LoginFormComponent implements OnInit {
   }
 
   saveForm() {
-    this.loginService.makeAccount(this.createUserForm.value).subscribe( (res: any) => {
+    this.userService.makeAccount(this.createUserForm.value).subscribe( (res: any) => {
     }, error => console.log(error));
   }
 
   loginForm() {
-    this.loginService.loginUser(this.loginUserForm.value).subscribe( (res: TokenObj) => {
+    this.userService.loginUser(this.loginUserForm.value).subscribe( (res: TokenObj) => {
       console.log(res);
       this.cookieService.set('zmat', res.token);
       this.router.navigate(['/']);

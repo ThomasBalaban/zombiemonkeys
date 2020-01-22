@@ -7,7 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class UserService {
   private currentUser;
 
   baseUrl = 'http://127.0.0.1:8000/';
@@ -32,7 +32,7 @@ export class LoginService {
         return res;
       }),
       retry(retries),
-      catchError(LoginService.handleError)
+      catchError(UserService.handleError)
     );
   }
 
@@ -51,7 +51,7 @@ export class LoginService {
         return res;
       }),
       retry(retries),
-      catchError(LoginService.handleError)
+      catchError(UserService.handleError)
     );
   }
 
@@ -59,7 +59,7 @@ export class LoginService {
     return this.loginUser(authData, retries);
   }
 
-  getUserData() {
+  getCurrentUserData() {
     return JSON.parse(localStorage.getItem('current user'));
   }
 

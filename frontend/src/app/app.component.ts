@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { VideosService } from './services/videos.service';
 import { Subscription } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
-import { LoginService } from './services/login.service';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   constructor(
     private videoService: VideosService,
     private cookieService: CookieService,
-    private loginService: LoginService,
+    private userService: UserService,
   ) {
 
   }
@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
     if ( this.cookieService.get('zmat') ) {
       this.videoSubscription = this.videoService.getData().subscribe( (res: any) => {
         this.videos = res;
-        console.log('you are logged in as: ', this.loginService.getUserData())
+        console.log('you are logged in as: ', this.userService.getCurrentUserData())
       },
       error => console.log(error));
     } else {

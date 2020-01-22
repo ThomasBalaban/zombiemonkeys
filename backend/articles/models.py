@@ -33,12 +33,12 @@ class Article(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='comments')
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1, on_delete=models.SET_DEFAULT, related_name='podcast_user')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1, on_delete=models.SET_DEFAULT, related_name='articles_user')
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
 
 class Tag(models.Model):
     post = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='tags')
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1, on_delete=models.SET_DEFAULT, related_name='podcast_tag')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1, on_delete=models.SET_DEFAULT, related_name='articles_tag')
     tag = models.CharField(max_length=50)
     created_date = models.DateTimeField(default=timezone.now)
