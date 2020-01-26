@@ -27,7 +27,6 @@ export class AppComponent implements OnInit {
     if ( this.cookieService.get('zmat') ) {
       this.videoSubscription = this.videoService.getData().subscribe( (res: any) => {
         this.videos = res;
-        console.log('you are logged in as: ', this.userService.getCurrentUserData())
       },
       error => console.log(error));
     } else {
