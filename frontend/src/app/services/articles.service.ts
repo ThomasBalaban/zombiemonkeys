@@ -8,7 +8,7 @@ import { catchError, map, retry } from 'rxjs/operators';
 })
 export class ArticlesService {
 
-  baseUrl = 'http://127.0.0.1:8000/';
+  baseUrl = 'http://127.0.0.1:8000/api/';
   headers = new HttpHeaders({
     'Content-Type': 'application/json'
   });
