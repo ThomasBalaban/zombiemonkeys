@@ -42,6 +42,7 @@ export class UserService {
 
   loginUser(authData, retries = 0): Observable<any> {
     const body = JSON.stringify(authData);
+    console.log('auth data', authData)
 
     return this.http.post(this.baseUrl + 'login/', body, {headers: this.headers}).pipe(
       map( (res: any) => {

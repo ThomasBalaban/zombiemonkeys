@@ -12,7 +12,7 @@ import { UserService } from './services/user.service';
 
 export class AppComponent implements OnInit {
   title = 'frontend';
-  private videos: [];
+  videos: [];
   private videoSubscription: Subscription;
 
   constructor(

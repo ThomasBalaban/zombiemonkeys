@@ -3,8 +3,7 @@
  <app-login-form></app-login-form>
 </div>
 
-<div *ngFor="let video of videos">
-  {{video.video_title}}
-</div>
+<router-outlet #appOutlet="outlet"></router-outlet>
+
 
 <router-outlet></router-outlet>
