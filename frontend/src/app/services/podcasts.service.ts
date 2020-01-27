@@ -34,4 +34,18 @@ export class PodcastsService {
   public getData(retries?: number) {
     return this.getAllpodcasts(retries);
   }
+
+  getSinglePodcasts(podcastId, retries = 0): Observable<any> {
+    return this.http.get(this.baseUrl + 'podcast/' + podcastId, {headers: this.headers}).pipe(
+      map( (res: any) => {
+        return res;
+      }),
+      retry(retries),
+      catchError(PodcastsService.handleError)
+    );
+  }
+
+  public getSingleData(podcastId: number, retries?: number) {
+    return this.getSinglePodcasts(podcastId, retries);
+  }
 }

@@ -22,4 +22,9 @@ export class PodcastsComponent implements OnInit {
     error => console.log(error))
   }
 
+  hyphenateUrlParams(str:string){
+    const changedstr = str.replace(/\s+/g, '-')
+
+    return changedstr;
+  }
 }
