@@ -17,4 +17,4 @@ class PodcastSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Podcast
-        fields = ['user', 'podcast_title', 'promoted', 'podcast_summery', 'podcast', 'created_date', 'comments', 'tags']
+        fields = ['id', 'user', 'podcast_title', 'promoted', 'podcast_summery', 'podcast', 'created_date', 'comments', 'tags']
