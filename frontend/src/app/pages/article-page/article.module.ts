@@ -1,23 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticlePageComponent } from './article-page.component';
-import { ArticlesComponent } from 'src/app/components/articles/articles.component';
 import { ArticlesService } from 'src/app/services/articles.service';
+import { ArticleDetailsComponent } from './article-details/article-details.component';
+import { ArticlesComponent } from './articles/articles.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     ArticlePageComponent,
-    ArticlesComponent
+    ArticlesComponent,
+    ArticleDetailsComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   providers: [
     ArticlesService
   ],
   exports: [
     ArticlePageComponent,
-    ArticlesComponent
+    ArticlesComponent,
   ]
 })
 export class ArticleModule { }

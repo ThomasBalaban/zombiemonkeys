@@ -1,0 +1,5 @@
+h
+
+<div *ngFor="let video of videos">
+  <a [routerLink]="[hyphenateUrlParams(video.id, video.video_title)]">{{ video.video_title }}</a>
+</div>

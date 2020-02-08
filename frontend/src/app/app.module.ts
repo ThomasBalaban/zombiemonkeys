@@ -27,7 +27,7 @@ import { PodcastModule } from './pages/podcast-page/podcast.module';
     ReactiveFormsModule,
     VideoModule,
     ArticleModule,
-    PodcastModule
+    PodcastModule,
   ],
   providers: [
     CookieService

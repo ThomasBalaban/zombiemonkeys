@@ -35,4 +35,18 @@ export class VideosService {
   public getData(retries?: number) {
     return this.getAllVideos(retries);
   }
+
+  getSingleVideo(videoId, retries = 0): Observable<any> {
+    return this.http.get(this.baseUrl + 'videos/' + videoId, {headers: this.headers}).pipe(
+      map( (res: any) => {
+        return res;
+      }),
+      retry(retries),
+      catchError(VideosService.handleError)
+    );
+  }
+
+  public getSingleData(videoId: number, retries?: number) {
+    return this.getSingleVideo(videoId, retries);
+  }
 }

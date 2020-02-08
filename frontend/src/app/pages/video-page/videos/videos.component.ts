@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { VideosService } from '../../services/videos.service';
 import { Subscription } from 'rxjs';
+import { VideosService } from 'src/app/services/videos.service';
 
 @Component({
   selector: 'app-videos',
@@ -20,6 +20,12 @@ export class VideosComponent implements OnInit {
       this.videos = res;
     },
     error => console.log(error));
+  }
+
+  hyphenateUrlParams(id: number, str:string){
+    const changedstr = str.replace(/\s+/g, '-')
+
+    return id + '/' + changedstr.toLowerCase();
   }
 
 }

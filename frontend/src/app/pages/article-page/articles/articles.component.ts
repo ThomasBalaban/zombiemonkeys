@@ -22,4 +22,9 @@ export class ArticlesComponent implements OnInit {
     error => console.log(error));
   }
 
+  hyphenateUrlParams(id: number, str:string){
+    const changedstr = str.replace(/\s+/g, '-');
+
+    return id + '/' + changedstr.toLowerCase();
+  }
 }

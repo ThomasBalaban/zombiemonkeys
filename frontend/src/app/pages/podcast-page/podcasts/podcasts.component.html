@@ -1,7 +1,3 @@
-<p>
-  podcasts works!
-</p>
 <div *ngFor="let podcast of podcasts">
-  <p>{{podcast.podcast_title}}</p>
-  <a [routerLink]="hyphenateUrlParams(podcast.podcast_title)" [queryParams]="{ id: podcast.id }">Test</a>
+  <a [routerLink]="[hyphenateUrlParams(podcast.id, podcast.podcast_title)]">{{ podcast.podcast_title }}</a>
 </div>

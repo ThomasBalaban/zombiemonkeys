@@ -19,12 +19,14 @@ export class PodcastsComponent implements OnInit {
     this.podcastSubscription = this.podcastService.getData().subscribe( (res: any) => {
       this.podcasts = res;
     },
-    error => console.log(error))
+    error => console.log(error));
+
+    
   }
 
-  hyphenateUrlParams(str:string){
+  hyphenateUrlParams(id: number, str:string){
     const changedstr = str.replace(/\s+/g, '-')
 
-    return changedstr;
+    return id + '/' + changedstr.toLowerCase();
   }
 }

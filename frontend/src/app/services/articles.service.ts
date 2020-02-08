@@ -34,4 +34,18 @@ export class ArticlesService {
   public getData(retries?: number) {
     return this.getAllArticles(retries);
   }
+
+  getSingleArticle(articleId, retries = 0): Observable<any> {
+    return this.http.get(this.baseUrl + 'articles/' + articleId, {headers: this.headers}).pipe(
+      map( (res: any) => {
+        return res;
+      }),
+      retry(retries),
+      catchError(ArticlesService.handleError)
+    );
+  }
+
+  public getSingleData(articleId: number, retries?: number) {
+    return this.getSingleArticle(articleId, retries);
+  }
 }
