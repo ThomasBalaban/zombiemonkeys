@@ -1,0 +1,28 @@
+@import '../../../../styles/helpers/colors';
+
+.user {    
+    li {
+        margin: 0 10px;
+        padding: 20px;
+        text-align: center;
+        color: map-get($green, "sea");
+        font-family: 'Raleway', sans-serif;
+        font-size: 2rem;
+        position: relative;
+
+        &:hover {
+            ul {
+                display: block;
+            }
+        }
+
+        ul {
+            display: none;
+            position: absolute;
+            top: 64px;
+            left: 0;
+            width: 100%;
+            background: #fff;
+        }
+    }
+}

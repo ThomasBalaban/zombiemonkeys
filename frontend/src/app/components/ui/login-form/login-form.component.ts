@@ -16,7 +16,8 @@ interface TokenObj {
 export class LoginFormComponent implements OnInit {
 
   loginSubScription;
-  zmat: string;
+  user;
+  username;
 
   createUserForm = new FormGroup({
     username: new FormControl(''),
@@ -35,7 +36,8 @@ export class LoginFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.zmat = this.cookieService.get('zmat');
+    this.user = this.userService.getCurrentUserData();
+    this.username = this.user.name;
   }
 
   saveForm() {

@@ -3,6 +3,7 @@
 
 html {
     height: 101%;
+    font-size: 12px;
 }
 
 * {
@@ -11,4 +12,5 @@ html {
 
 body {
     // background: map-get($green, "light");
+    font-family: 'Roboto Slab', serif;
 }

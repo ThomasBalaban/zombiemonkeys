@@ -1,0 +1,26 @@
+@import '../../../../styles/helpers/colors';
+
+nav {    
+    ul {
+        display: flex;
+        flex-direction: row;
+
+        li {
+            margin: 0 10px;
+            padding: 20px;
+            text-align: center;
+
+            a {
+                text-decoration: none;
+                color: map-get($green, "sea");
+                font-family: 'Raleway', sans-serif;
+                font-size: 2rem;
+
+                &:hover {
+                    color: map-get($green, "dark");
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

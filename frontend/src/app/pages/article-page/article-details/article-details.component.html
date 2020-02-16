@@ -1,8 +1,5 @@
-<p>
-  article details works!
-</p>
-  <p>{{singleArticle?.article_title}}</p>
-  <a routerLink="/articles">Back</a>
-
-<p [innerHTML]="singleArticle?.article_text"></p>
-  
+<p>{{singleArticle?.article_title}}</p>
+<article>
+  <div [innerHTML]="singleArticle?.article_text"></div>
+</article>
+<a routerLink="/articles">Back To Articles</a>

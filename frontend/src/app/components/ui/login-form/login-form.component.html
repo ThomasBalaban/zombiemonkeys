@@ -1,6 +1,5 @@
-<h1>Create User</h1>
-<p>zmat: {{zmat}}</p>
-<ng-container *ngIf="!zmat">
+<ng-container *ngIf="!user; else loggedIn">
+  <h1>Create User</h1>
   <form [formGroup]="createUserForm" (ngSubmit)="saveForm()">
     <label>Username</label><br />
     <input type="text" formControlName="username" /> <br/>
@@ -25,3 +24,14 @@
   </form>
 </ng-container>
 
+<ng-template #loggedIn>
+  <ul class="user">
+    <li>{{username}}
+      <ul>
+        <li>Profile</li>
+        <li>Email Settings</li>
+        <li>User Settings</li>
+      </ul>
+    </li>
+  </ul>
+</ng-template>
