@@ -2,4 +2,21 @@
 <article>
   <div [innerHTML]="singleArticle?.article_text"></div>
 </article>
+<div class="comments">
+  <div *ngFor="let s of comment">
+    <div class="comment">
+      <div class="userpic">
+        <img [src]="s.userinfo.extra_user_info[0].user_picture">
+      </div>
+      <div class="info">
+        <div class="username">
+          <p>{{ s.userinfo.username }}</p>
+          <aside>Created Date: {{s.created_date}}</aside>
+        </div>
+        <p>{{s.text}}</p>
+      </div>
+    </div>
+    
+  </div>
+</div>
 <a routerLink="/articles">Back To Articles</a>

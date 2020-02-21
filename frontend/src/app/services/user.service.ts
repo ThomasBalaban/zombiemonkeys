@@ -72,4 +72,14 @@ export class UserService {
       Authorization: `Token ${token}`,
     });
   }
+
+  getSingleUser(userId, retries = 0) {
+    return this.http.get(this.baseUrl + 'api/users/' + userId).pipe(
+      map( (res: any) => {
+        return res;
+      }),
+      retry(retries),
+      catchError(UserService.handleError)
+    );
+  }
 }

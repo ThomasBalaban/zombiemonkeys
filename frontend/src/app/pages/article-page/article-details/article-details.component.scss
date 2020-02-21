@@ -16,3 +16,63 @@ article {
         }
     }
 }
+
+.comments {
+    width: 50%;
+    margin: 0 auto;
+
+    .comment {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        background: #f9f9f9;
+        border-radius: 5px;
+        border-bottom: 3px solid #efefef;
+        margin: 0 0 10px;
+        padding: 10px;
+
+        .userpic {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            max-width: 100px;
+            margin: 0 20px 0 0;
+
+            img {
+                width: 100%;
+                border-radius: 5px;
+            }
+        }
+
+        .info {
+            width: 70%;
+
+            p {
+                font-size: 1.2rem;
+                margin: 0;
+            }
+
+            .username {
+                position: relative;
+                display: flex;
+                align-items: flex-end;
+                flex-direction: column;
+                border-bottom: 1px dotted black;
+                padding: 0 0 3px;
+                margin: 0 0 5px;
+
+                @media(min-width: 769px) {
+                    flex-direction: row;
+                }
+
+                aside {
+                    font-size: 0.8rem;
+
+                    @media(min-width: 769px) {
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+    }
+}
