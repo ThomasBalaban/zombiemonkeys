@@ -18,6 +18,8 @@ export class LoginFormComponent implements OnInit {
   loginSubScription;
   user;
   username;
+  createuser = false;
+  loginuser = false;
 
   createUserForm = new FormGroup({
     username: new FormControl(''),
@@ -37,7 +39,19 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.userService.getCurrentUserData();
-    this.username = this.user.name;
+    if(this.user){
+      this.username = this.user.name;
+    }
+  }
+
+  createUserBtn() {
+    this.loginuser = false;
+    this.createuser = !this.createuser;
+  }
+
+  loginUserBtn() {
+    this.createuser = false;
+    this.loginuser = !this.loginuser;
   }
 
   saveForm() {

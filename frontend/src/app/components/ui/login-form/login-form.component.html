@@ -1,27 +1,26 @@
 <ng-container *ngIf="!user; else loggedIn">
-  <h1>Create User</h1>
-  <form [formGroup]="createUserForm" (ngSubmit)="saveForm()">
-    <label>Username</label><br />
-    <input type="text" formControlName="username" /> <br/>
-  
-    <label>Password</label><br />
-    <input type="text" formControlName="password" /> <br/>
-  
-    <button type="submit">Create User</button>
-  </form>
-  
-  <hr />
-  <h1>Login</h1>
-  
-  <form [formGroup]="loginUserForm" (ngSubmit)="loginForm()">
-    <label>Username</label><br />
-    <input type="text" formControlName="username" /> <br/>
-  
-    <label>Password</label><br />
-    <input type="text" formControlName="password" /> <br/>
-  
-    <button type="submit">Login</button>
-  </form>
+  <ul>
+    <li>
+      <span (click)="createUserBtn()">Create User</span>
+      <form [formGroup]="createUserForm" (ngSubmit)="saveForm()" [hidden]="!createuser">
+        <label>Username</label><br />
+        <input type="text" formControlName="username" /> <br/>
+        <label>Password</label><br />
+        <input type="text" formControlName="password" /> <br/>
+        <button type="submit">Create User</button>
+      </form>
+    </li>
+    <li>
+      <span (click)="loginUserBtn()">Login</span>
+      <form [formGroup]="loginUserForm" (ngSubmit)="loginForm()" [hidden]="!loginuser">
+        <label>Username</label><br />
+        <input type="text" formControlName="username" /> <br/>
+        <label>Password</label><br />
+        <input type="text" formControlName="password" /> <br/>
+        <button type="submit">Login</button>
+      </form>
+    </li>
+  </ul>
 </ng-container>
 
 <ng-template #loggedIn>
