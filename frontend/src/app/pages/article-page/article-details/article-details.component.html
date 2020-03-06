@@ -1,5 +1,6 @@
-<p>{{singleArticle?.article_title}}</p>
 <article>
+  <img [src]="singleArticle?.article_header" width="100%" height="300px">
+  <h2>{{singleArticle?.article_title}}</h2>
   <div [innerHTML]="singleArticle?.article_text"></div>
 </article>
 <div class="comments">

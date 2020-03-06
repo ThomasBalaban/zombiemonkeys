@@ -1,1 +1,1 @@
-@use "sass:map";html{height:101%;font-size:12px}*{box-sizing:border-box}body{font-family:'Roboto Slab',serif}
+@use "sass:map";html{height:101%;font-size:12px}*{box-sizing:border-box}body{background:url(background.jpg) #0e0e0e;color:#fff;font-family:'Roboto Slab',serif;margin:0;padding:0}
