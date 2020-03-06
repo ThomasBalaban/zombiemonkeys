@@ -1,6 +1,17 @@
 @import '../../../../styles/helpers/fonts';
 
+.container {
+    max-width: 1500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: #000000;
+}
+
 article {
+    background: #ffffff;
+    padding-left: 250px;
+    width: 100%;
 
     h2 {
         font-size: 6rem;
@@ -8,7 +19,11 @@ article {
         margin: 40px 0 30px;
         padding: 0 0 5px;
         line-height: 1;
-        border-bottom: 5px solid white;
+        border-bottom: 5px solid black;
+    }
+
+    img {
+        display: block;
     }
 
     div {
@@ -16,6 +31,7 @@ article {
             font-size: 1.6rem;
             line-height: 2.8rem;
             margin: 0 0 20px;
+            color: #000000;
         }
 
         ::ng-deep img {
@@ -25,18 +41,18 @@ article {
 }
 
 .comments {
-    width: 50%;
-    margin: 0 auto;
+    width: 70%;
+    margin-top: 5px;
+    background: #f9f9f9;
+    padding: 10px;
 
     .comment {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        background: #f9f9f9;
-        border-radius: 5px;
-        border-bottom: 3px solid #efefef;
         margin: 0 0 10px;
         padding: 10px;
+        background: #ffffff;
 
         .userpic {
             display: flex;
@@ -52,10 +68,11 @@ article {
         }
 
         .info {
-            width: 70%;
+            width: 100%;
 
             p {
-                font-size: 1.2rem;
+                font-size: 1.6rem;
+                line-height: 1;
                 margin: 0;
             }
 

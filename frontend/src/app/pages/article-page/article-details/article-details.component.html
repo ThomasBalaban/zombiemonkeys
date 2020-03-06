@@ -1,23 +1,29 @@
 <article>
-  <img [src]="singleArticle?.article_header" width="100%" height="300px">
-  <h2>{{singleArticle?.article_title}}</h2>
-  <div [innerHTML]="singleArticle?.article_text"></div>
-</article>
-<div class="comments">
-  <div *ngFor="let s of comment">
-    <div class="comment">
-      <div class="userpic">
-        <img [src]="s.userinfo.extra_user_info[0].user_picture">
-      </div>
-      <div class="info">
-        <div class="username">
-          <p>{{ s.userinfo.username }}</p>
-          <aside>Created Date: {{s.created_date}}</aside>
+  <a routerLink="/articles">Back To Articles</a>
+  <div class="container">
+    <img [src]="singleArticle?.article_header" width="1500px" height="300px">
+    <h2>{{singleArticle?.article_title}}</h2>
+    <div [innerHTML]="singleArticle?.article_text"></div>
+  </div>
+  <div class="container">
+    <div class="comments">
+      <div *ngFor="let s of comment">
+        <div class="comment">
+          <div class="userpic">
+            <img [src]="s.userinfo.extra_user_info[0].user_picture">
+          </div>
+          <div class="info">
+            <div class="username">
+              <p>{{ s.userinfo.username }}</p>
+              <aside>{{s.created_date | date: 'MMMM d, yyyy' }}</aside>
+            </div>
+            <p>{{s.text}}</p>
+          </div>
         </div>
-        <p>{{s.text}}</p>
       </div>
     </div>
-    
+    <div class="thestuffhere">
+      ADS
+    </div>
   </div>
-</div>
-<a routerLink="/articles">Back To Articles</a>
+</article>

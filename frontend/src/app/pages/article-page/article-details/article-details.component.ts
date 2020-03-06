@@ -25,13 +25,7 @@ export class ArticleDetailsComponent implements OnInit {
   ngOnInit() {
     this.articleSubscription = this.articlesService.getSingleArticle(this.route.snapshot.params.id).subscribe( (res: any) => {
       this.singleArticle = res;
-
-
       this.getCommentInfo();
-      // this.userSubscription = this.userService.getSingleUser(this.singleArticle).subscribe( (res2: any) => {
-      //   this.user = res2;
-      //   console.log('user', this.user);
-      // }, error => console.log(error))
     },
     error => console.log(error));
   }
@@ -46,8 +40,6 @@ export class ArticleDetailsComponent implements OnInit {
         this.comment.push(item);
       }, error => console.log(error))
     });
-
-    console.log('arr:', this.comment)
   }
 
 }
