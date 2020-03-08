@@ -23,4 +23,10 @@ export class PromotedComponent implements OnInit {
     error => console.log(error))
   }
 
+  hyphenateUrlParams(type: string, id: number, str:string){
+    const changedstr = str.replace(/\s+/g, '-');
+
+    return type + '/' + id + '/' + changedstr.toLowerCase();
+  }
+
 }

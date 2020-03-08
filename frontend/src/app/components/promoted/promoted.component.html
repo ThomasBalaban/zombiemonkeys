@@ -1,15 +1,116 @@
-<p>
-  promoted works
-</p>
+<div class="featured">
+  <ng-container *ngFor="let vr of promotedItem?.video">
+    <ng-container *ngIf="vr.promoted == 3">
+      <a
+        class="feature-block big-promo"
+        [routerLink]="[hyphenateUrlParams('videos', vr.id, vr.video_title)]" [ngStyle]="{'background-image': 'url('+vr.video_thumbnail+')'}">
+        <img [src]="vr.video_thumbnail" [alt]="vr.video_description" />
+        <div class="content">
+          <h3>{{vr.video_title}}</h3>
+          <p>{{vr.video_description}}</p>
+        </div>
+      </a>
+    </ng-container>
+  </ng-container>
 
-<div *ngFor="let vr of promotedItem?.video">
-  <p>{{vr.video_title}}</p>
-</div>
+  <ng-container *ngFor="let ar of promotedItem?.article">
+    <ng-container *ngIf="ar.promoted == 3">
+      <a class="feature-block big-promo" [routerLink]="[hyphenateUrlParams('articles', ar.id, ar.article_title)]" [ngStyle]="{'background-image': 'url('+ar.article_poster+')'}">
+        <img [src]="ar.article_poster" [alt]="ar.article_title" />
+        <div class="content">
+          <h3>{{ar.article_title}}</h3>
+          <p>{{ar.article_summery}}</p>
+        </div>
+      </a>
+    </ng-container>
+  </ng-container>
 
-<div *ngFor="let ar of promotedItem?.article">
-    <p>{{ar.article_title}}</p>
-</div>
+  <ng-container *ngFor="let pr of promotedItem?.podcast">
+    <ng-container *ngIf="pr.promoted == 3">
+      <a class="feature-block big-promo" [routerLink]="[hyphenateUrlParams('podcasts', pr.id, pr.podcast_summery)]" [ngStyle]="{'background-image': 'url('+pr.podcast+')'}">
+        <img [src]="pr.podcast" [alt]="pr.podcast_title" />
+        <div class="content">
+          <h3>{{pr.podcast_title}}</h3>
+          <p>{{pr.podcast_summery}}</p>
+        </div>
+      </a>
+    </ng-container>
+  </ng-container>
 
-<div *ngFor="let pr of promotedItem?.podcast">
-  <p>{{pr.podcast_title}}</p>
+  <!-- Start MED promo -->
+
+  <ng-container *ngFor="let vr of promotedItem?.video">
+    <ng-container *ngIf="vr.promoted == 2">
+      <a class="feature-block med-promo" [routerLink]="[hyphenateUrlParams('videos', vr.id, vr.video_title)]" [ngStyle]="{'background-image': 'url('+vr.video_thumbnail+')'}">
+        <img [src]="vr.video_thumbnail" [alt]="vr.video_description" />
+        <div class="content">
+          <h3>{{vr.video_title}}</h3>
+          <p>{{vr.video_description}}</p>
+        </div>
+      </a>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngFor="let ar of promotedItem?.article">
+    <ng-container *ngIf="ar.promoted == 2">
+      <a class="feature-block med-promo" [routerLink]="[hyphenateUrlParams('articles', ar.id, ar.article_title)]" [ngStyle]="{'background-image': 'url('+ar.article_poster+')'}">
+        <img [src]="ar.article_poster" [alt]="ar.article_title" />
+        <div class="content">
+          <h3>{{ar.article_title}}</h3>
+          <p>{{ar.article_summery}}</p>
+        </div>
+      </a>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngFor="let pr of promotedItem?.podcast">
+    <ng-container *ngIf="pr.promoted == 2">
+      <a class="feature-block med-promo" [routerLink]="[hyphenateUrlParams('podcasts', pr.id, pr.podcast_summery)]" [ngStyle]="{'background-image': 'url('+pr.podcast+')'}">
+        <img [src]="pr.podcast" [alt]="pr.podcast_title" />
+        <div class="content">
+          <h3>{{pr.podcast_title}}</h3>
+          <p>{{pr.podcast_summery}}</p>
+        </div>
+      </a>
+    </ng-container>
+  </ng-container>
+
+
+  <!-- Start SMALL promo -->
+
+  <ng-container *ngFor="let vr of promotedItem?.video">
+    <ng-container *ngIf="vr.promoted == 1">
+      <a class="feature-block small-promo" [routerLink]="[hyphenateUrlParams('videos', vr.id, vr.video_title)]" [ngStyle]="{'background-image': 'url('+vr.video_thumbnail+')'}">
+        <img [src]="vr.video_thumbnail" [alt]="vr.video_description" />
+        <div class="content">
+          <h3>{{vr.video_title}}</h3>
+          <p>{{vr.video_description}}</p>
+        </div>
+      </a>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngFor="let ar of promotedItem?.article">
+    <ng-container *ngIf="ar.promoted == 1">
+      <a class="feature-block small-promo" [routerLink]="[hyphenateUrlParams('articles', ar.id, ar.article_title)]" [ngStyle]="{'background-image': 'url('+ar.article_poster+')'}">
+        <img [src]="ar.article_poster" [alt]="ar.article_title" />
+        <div class="content">
+          <h3>{{ar.article_title}}</h3>
+          <p>{{ar.article_summery}}</p>
+        </div>
+      </a>
+    </ng-container>
+  </ng-container>
+
+  <ng-container *ngFor="let pr of promotedItem?.podcast">
+    <ng-container *ngIf="pr.promoted == 1">
+      <a class="feature-block small-promo" [routerLink]="[hyphenateUrlParams('podcasts', pr.id, pr.podcast_summery)]" [ngStyle]="{'background-image': 'url('+pr.podcast+')'}">
+        <img [src]="pr.podcast" [alt]="pr.podcast_title" />
+        <div class="content">
+          <h3>{{pr.podcast_title}}</h3>
+          <p>{{pr.podcast_summery}}</p>
+        </div>
+      </a>
+    </ng-container>
+  </ng-container>
 </div>

@@ -1,7 +1,7 @@
 <article>
   <a routerLink="/articles">Back To Articles</a>
   <div class="container">
-    <img [src]="singleArticle?.article_header" width="1500px" height="300px">
+    <img [src]="singleArticle?.article_header">
     <h2>{{singleArticle?.article_title}}</h2>
     <div [innerHTML]="singleArticle?.article_text"></div>
   </div>

@@ -3,44 +3,60 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
-    height: 100vh;
-    align-content: center;
-    justify-content: center;
+    width: calc(100% - 65px);
+    padding: 0 40px 0 0;
+    margin: 0 0 0 65px;
+    max-width: 2040px;
 
     img {
         width: 100%;
-        max-width: 500px;
+        max-width: 600px;
         position: relative;
-        top: -57px;
     }
 
-    .sign {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        margin: 0;
-        width: 100%;
-    
-        &__word {
-            font-size: 9.6rem;
-            font-size: 10vw;
-            text-align: center;
-            line-height: 1;
-            color: #d4ffe9;
-            animation: green .08s ease-in-out infinite alternate;
+    .left {
+        width: 50%;
+        max-width: 800px;
+        text-align: center;
+        padding: 0 40px;
 
-            @media(min-width: 1300px) {
-                font-size: 11rem;
-            }
+        h3 {
+            font-size: 3rem;
+            width: 100%;
+        }
+
+        .sign {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            text-decoration: none;
+            margin: 0;
+            width: 100%;
         
-            &:last-child {
-                color: #fed1ff;
-                animation: pink .08s ease-in-out infinite alternate;
+            &__word {
+                font-size: 9.6rem;
+                font-size: 10vw;
+                text-align: center;
+                line-height: 1;
+                color: #d4ffe9;
+                animation: green .08s ease-in-out infinite alternate;
+
+                @media(min-width: 1300px) {
+                    font-size: 11rem;
+                }
+            
+                &:last-child {
+                    color: #fed1ff;
+                    animation: pink .08s ease-in-out infinite alternate;
+                }
             }
         }
+    }
+
+    .right {
+        width: 50%;
     }
 }
 

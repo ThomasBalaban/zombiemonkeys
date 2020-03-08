@@ -1,7 +1,8 @@
 @import '../../../../styles/helpers/fonts';
 
 .container {
-    max-width: 1500px;
+    max-width: 1540px;
+    padding: 0 40px 0 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -24,6 +25,8 @@ article {
 
     img {
         display: block;
+        max-width: 1500px;
+        max-height: 300px;
     }
 
     div {
