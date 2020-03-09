@@ -1,11 +1,23 @@
 <article>
-  <a routerLink="/articles">Back To Articles</a>
-  <div class="container">
+  <div class="base">
+    <a class="backBtn" routerLink="/articles">Back To Articles</a>
+    <div class="details">
+      <div class="tags">
+        <h1 *ngFor="let tag of singleArticle?.tags">{{tag.tag}}</h1>  
+      </div>
+      <div *ngIf="singleArticle?.user.extra_user_info" class="user-info">
+        <p>By <span class="name">{{ singleArticle?.user.username }}</span></p>
+        <p>{{singleArticle?.created_date | date: 'MMMM dd, yyyy'}}</p>
+      </div>
+      <div class="revised-dates">
+        <p>Revised: {{singleArticle?.revised_date | date: 'MMMM dd, yyyy'}}</p>
+      </div>
+    </div>
     <img [src]="singleArticle?.article_header">
     <h2>{{singleArticle?.article_title}}</h2>
     <div [innerHTML]="singleArticle?.article_text"></div>
   </div>
-  <div class="container">
+  <div class="base">
     <div class="comments">
       <div *ngFor="let s of comment">
         <div class="comment">

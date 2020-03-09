@@ -5,7 +5,7 @@ from .models import UserProfile
 class UserPhotoSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
-        fields = ['user_picture']
+        fields = ['user_picture', 'user_real_name']
 
 class UserSerializer(serializers.ModelSerializer):
     extra_user_info = UserPhotoSerializer(many=True)

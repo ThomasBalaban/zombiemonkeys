@@ -25,7 +25,14 @@ export class ArticleDetailsComponent implements OnInit {
   ngOnInit() {
     this.articleSubscription = this.articlesService.getSingleArticle(this.route.snapshot.params.id).subscribe( (res: any) => {
       this.singleArticle = res;
+
+      this.userService.getSingleUser(this.singleArticle.user).subscribe( (user: any) => {
+        this.singleArticle.user = user;
+      }, error => console.log(error))
+      
       this.getCommentInfo();
+
+      console.log(this.singleArticle)
     },
     error => console.log(error));
   }

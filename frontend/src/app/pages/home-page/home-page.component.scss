@@ -1,12 +1,8 @@
 
-.intro-container {
+.base {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    width: calc(100% - 65px);
-    padding: 0 40px 0 0;
-    margin: 0 0 0 65px;
-    max-width: 2040px;
+    flex-wrap: nowrap;
 
     img {
         width: 100%;
@@ -15,10 +11,9 @@
     }
 
     .left {
-        width: 50%;
         max-width: 800px;
         text-align: center;
-        padding: 0 40px;
+        padding: 0 80px 0 0;
 
         h3 {
             font-size: 3rem;
@@ -56,7 +51,7 @@
     }
 
     .right {
-        width: 50%;
+        width: auto;
     }
 }
 
